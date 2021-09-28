@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmHat));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -37,19 +38,24 @@
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.radioButton5 = new System.Windows.Forms.RadioButton();
             this.radioButton6 = new System.Windows.Forms.RadioButton();
+            this.hullohatDataSet1 = new HulloHatarozo.hullohatDataSet1();
+            this.fajokBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.fajokTableAdapter = new HulloHatarozo.hullohatDataSet1TableAdapters.fajokTableAdapter();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.hullohatDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fajokBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -113,6 +119,7 @@
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "Van";
             this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
             // radioButton1
             // 
@@ -124,6 +131,7 @@
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "Nincs";
             this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
             // comboBox1
             // 
@@ -149,17 +157,6 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Pislog-e?";
             // 
-            // radioButton3
-            // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(17, 41);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(46, 17);
-            this.radioButton3.TabIndex = 0;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Igen";
-            this.radioButton3.UseVisualStyleBackColor = true;
-            // 
             // radioButton4
             // 
             this.radioButton4.AutoSize = true;
@@ -171,14 +168,16 @@
             this.radioButton4.Text = "Nem";
             this.radioButton4.UseVisualStyleBackColor = true;
             // 
-            // listView1
+            // radioButton3
             // 
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(339, 64);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(367, 332);
-            this.listView1.TabIndex = 8;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Location = new System.Drawing.Point(17, 41);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(46, 17);
+            this.radioButton3.TabIndex = 0;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = "Igen";
+            this.radioButton3.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
@@ -233,14 +232,36 @@
             this.radioButton6.Text = "Kerek";
             this.radioButton6.UseVisualStyleBackColor = true;
             // 
+            // hullohatDataSet1
+            // 
+            this.hullohatDataSet1.DataSetName = "hullohatDataSet1";
+            this.hullohatDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // fajokBindingSource
+            // 
+            this.fajokBindingSource.DataMember = "fajok";
+            this.fajokBindingSource.DataSource = this.hullohatDataSet1;
+            // 
+            // fajokTableAdapter
+            // 
+            this.fajokTableAdapter.ClearBeforeFill = true;
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(339, 80);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(449, 355);
+            this.listBox1.TabIndex = 11;
+            // 
             // FrmHat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.listView1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.numericUpDown1);
@@ -249,6 +270,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmHat";
             this.Text = "Hüllő Határozó V0.1 - Határozó";
+            this.Load += new System.EventHandler(this.FrmHat_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -257,6 +279,8 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.hullohatDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fajokBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -274,11 +298,14 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.RadioButton radioButton4;
         private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.RadioButton radioButton5;
         private System.Windows.Forms.RadioButton radioButton6;
+        private hullohatDataSet1 hullohatDataSet1;
+        private System.Windows.Forms.BindingSource fajokBindingSource;
+        private hullohatDataSet1TableAdapters.fajokTableAdapter fajokTableAdapter;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }
