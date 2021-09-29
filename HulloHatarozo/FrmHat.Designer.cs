@@ -38,13 +38,13 @@
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.rdb_pislogn = new System.Windows.Forms.RadioButton();
+            this.rdb_pislogi = new System.Windows.Forms.RadioButton();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.radioButton5 = new System.Windows.Forms.RadioButton();
-            this.radioButton6 = new System.Windows.Forms.RadioButton();
+            this.rdb_pupillf = new System.Windows.Forms.RadioButton();
+            this.rdb_pupillk = new System.Windows.Forms.RadioButton();
             this.hullohatDataSet1 = new HulloHatarozo.hullohatDataSet1();
             this.fajokBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.fajokTableAdapter = new HulloHatarozo.hullohatDataSet1TableAdapters.fajokTableAdapter();
@@ -148,8 +148,8 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.radioButton4);
-            this.groupBox2.Controls.Add(this.radioButton3);
+            this.groupBox2.Controls.Add(this.rdb_pislogn);
+            this.groupBox2.Controls.Add(this.rdb_pislogi);
             this.groupBox2.Location = new System.Drawing.Point(28, 24);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(200, 100);
@@ -157,27 +157,29 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Pislog-e?";
             // 
-            // radioButton4
+            // rdb_pislogn
             // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(88, 41);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(47, 17);
-            this.radioButton4.TabIndex = 1;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "Nem";
-            this.radioButton4.UseVisualStyleBackColor = true;
+            this.rdb_pislogn.AutoSize = true;
+            this.rdb_pislogn.Location = new System.Drawing.Point(88, 41);
+            this.rdb_pislogn.Name = "rdb_pislogn";
+            this.rdb_pislogn.Size = new System.Drawing.Size(47, 17);
+            this.rdb_pislogn.TabIndex = 1;
+            this.rdb_pislogn.TabStop = true;
+            this.rdb_pislogn.Text = "Nem";
+            this.rdb_pislogn.UseVisualStyleBackColor = true;
+            this.rdb_pislogn.CheckedChanged += new System.EventHandler(this.rdb_pislogi_CheckedChanged);
             // 
-            // radioButton3
+            // rdb_pislogi
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(17, 41);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(46, 17);
-            this.radioButton3.TabIndex = 0;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Igen";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.rdb_pislogi.AutoSize = true;
+            this.rdb_pislogi.Location = new System.Drawing.Point(17, 41);
+            this.rdb_pislogi.Name = "rdb_pislogi";
+            this.rdb_pislogi.Size = new System.Drawing.Size(46, 17);
+            this.rdb_pislogi.TabIndex = 0;
+            this.rdb_pislogi.TabStop = true;
+            this.rdb_pislogi.Text = "Igen";
+            this.rdb_pislogi.UseVisualStyleBackColor = true;
+            this.rdb_pislogi.CheckedChanged += new System.EventHandler(this.rdb_pislogi_CheckedChanged);
             // 
             // label3
             // 
@@ -201,8 +203,8 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.radioButton5);
-            this.groupBox4.Controls.Add(this.radioButton6);
+            this.groupBox4.Controls.Add(this.rdb_pupillf);
+            this.groupBox4.Controls.Add(this.rdb_pupillk);
             this.groupBox4.Location = new System.Drawing.Point(28, 130);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(200, 100);
@@ -210,27 +212,29 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Pupilla állása";
             // 
-            // radioButton5
+            // rdb_pupillf
             // 
-            this.radioButton5.AutoSize = true;
-            this.radioButton5.Location = new System.Drawing.Point(88, 41);
-            this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(80, 17);
-            this.radioButton5.TabIndex = 1;
-            this.radioButton5.TabStop = true;
-            this.radioButton5.Text = "Függőleges";
-            this.radioButton5.UseVisualStyleBackColor = true;
+            this.rdb_pupillf.AutoSize = true;
+            this.rdb_pupillf.Location = new System.Drawing.Point(88, 41);
+            this.rdb_pupillf.Name = "rdb_pupillf";
+            this.rdb_pupillf.Size = new System.Drawing.Size(80, 17);
+            this.rdb_pupillf.TabIndex = 1;
+            this.rdb_pupillf.TabStop = true;
+            this.rdb_pupillf.Text = "Függőleges";
+            this.rdb_pupillf.UseVisualStyleBackColor = true;
+            this.rdb_pupillf.CheckedChanged += new System.EventHandler(this.rdb_pupillk_CheckedChanged);
             // 
-            // radioButton6
+            // rdb_pupillk
             // 
-            this.radioButton6.AutoSize = true;
-            this.radioButton6.Location = new System.Drawing.Point(17, 41);
-            this.radioButton6.Name = "radioButton6";
-            this.radioButton6.Size = new System.Drawing.Size(53, 17);
-            this.radioButton6.TabIndex = 0;
-            this.radioButton6.TabStop = true;
-            this.radioButton6.Text = "Kerek";
-            this.radioButton6.UseVisualStyleBackColor = true;
+            this.rdb_pupillk.AutoSize = true;
+            this.rdb_pupillk.Location = new System.Drawing.Point(17, 41);
+            this.rdb_pupillk.Name = "rdb_pupillk";
+            this.rdb_pupillk.Size = new System.Drawing.Size(53, 17);
+            this.rdb_pupillk.TabIndex = 0;
+            this.rdb_pupillk.TabStop = true;
+            this.rdb_pupillk.Text = "Kerek";
+            this.rdb_pupillk.UseVisualStyleBackColor = true;
+            this.rdb_pupillk.CheckedChanged += new System.EventHandler(this.rdb_pupillk_CheckedChanged);
             // 
             // hullohatDataSet1
             // 
@@ -296,13 +300,13 @@
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.RadioButton radioButton4;
-        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton rdb_pislogn;
+        private System.Windows.Forms.RadioButton rdb_pislogi;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.RadioButton radioButton5;
-        private System.Windows.Forms.RadioButton radioButton6;
+        private System.Windows.Forms.RadioButton rdb_pupillf;
+        private System.Windows.Forms.RadioButton rdb_pupillk;
         private hullohatDataSet1 hullohatDataSet1;
         private System.Windows.Forms.BindingSource fajokBindingSource;
         private hullohatDataSet1TableAdapters.fajokTableAdapter fajokTableAdapter;

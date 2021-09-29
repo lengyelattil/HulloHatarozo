@@ -13,6 +13,7 @@ namespace HulloHatarozo
 {
     public partial class FrmHat : Form
     {
+
         public FrmHat()
         {
             InitializeComponent();
@@ -25,6 +26,7 @@ namespace HulloHatarozo
             con = new SqlConnection();
             con.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB; AttachDbFilename=|DataDirectory|\hullohat.mdf; Integrated Security=True";
             con.Open();
+
 
             //SqlCommand command = new SqlCommand($"SELECT nev FROM fajok", con);
             //SqlDataReader reader = command.ExecuteReader();
@@ -53,16 +55,32 @@ namespace HulloHatarozo
             string query = @"
                 SELECT fajok.nev
                 FROM fajok LEFT JOIN tulajdonsagok
-                ON fajok.id = tulajdonsagok.fajid
+                ON fajok.id = tulajdonsagok.fajid WHERE 1=1
             ";
 
             if (radioButton2.Checked)
             {
-                query += " WHERE tulajdonsagok.lab > 0";
+                    query += " AND tulajdonsagok.lab > 0";
             }
             if (radioButton1.Checked)
             {
-                query += " WHERE tulajdonsagok.lab < 1";
+                    query += " AND tulajdonsagok.lab < 1";
+            }
+            if (rdb_pislogi.Checked)
+            {
+                query += " AND tulajdonsagok.pislog > 0";
+            }
+            if (rdb_pislogn.Checked)
+            {
+                query += " AND tulajdonsagok.pislog < 1";
+            }
+            if (rdb_pupillk.Checked)
+            {
+                query += " AND tulajdonsagok.pupilla = 'kerek'";
+            }
+            if (rdb_pupillf.Checked)
+            {
+                query += " AND tulajdonsagok.pupilla = 'függoleges'";
             }
 
             SqlDataReader reader = new SqlCommand(query, con).ExecuteReader();
@@ -74,6 +92,16 @@ namespace HulloHatarozo
 
             reader.Close();
 
+        }
+
+        private void rdb_pislogi_CheckedChanged(object sender, EventArgs e)
+        {
+            updateList();
+        }
+
+        private void rdb_pupillk_CheckedChanged(object sender, EventArgs e)
+        {
+            updateList();
         }
     }
 }

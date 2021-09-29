@@ -28,14 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmIsm));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.csoportokToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gyíkokToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.teknősökToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mocsáríteknősfélékCsaládjaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mocsáriTeknősToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vörösfülűÉkszerteknősToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gyíkokToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gyíkokAlrendjeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nyakörvösgyíkfélékCsaládjaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.zöldGyíkToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -58,15 +59,20 @@
             this.viperafélékCsaládjaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.keresztesViperaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rákosiViperaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_leiras = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.hullohatDataSet1 = new HulloHatarozo.hullohatDataSet1();
+            this.fajokBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.fajokTableAdapter = new HulloHatarozo.hullohatDataSet1TableAdapters.fajokTableAdapter();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hullohatDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fajokBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -87,15 +93,6 @@
             this.csoportokToolStripMenuItem.Name = "csoportokToolStripMenuItem";
             this.csoportokToolStripMenuItem.Size = new System.Drawing.Size(74, 20);
             this.csoportokToolStripMenuItem.Text = "Csoportok";
-            // 
-            // gyíkokToolStripMenuItem
-            // 
-            this.gyíkokToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.gyíkokAlrendjeToolStripMenuItem,
-            this.kígyókAlrendjeToolStripMenuItem});
-            this.gyíkokToolStripMenuItem.Name = "gyíkokToolStripMenuItem";
-            this.gyíkokToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
-            this.gyíkokToolStripMenuItem.Text = "Pikkelyes hüllők rendje";
             // 
             // teknősökToolStripMenuItem
             // 
@@ -119,12 +116,22 @@
             this.mocsáriTeknősToolStripMenuItem.Name = "mocsáriTeknősToolStripMenuItem";
             this.mocsáriTeknősToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
             this.mocsáriTeknősToolStripMenuItem.Text = "Mocsári teknős";
+            this.mocsáriTeknősToolStripMenuItem.Click += new System.EventHandler(this.mocsáriTeknősToolStripMenuItem_Click);
             // 
             // vörösfülűÉkszerteknősToolStripMenuItem
             // 
             this.vörösfülűÉkszerteknősToolStripMenuItem.Name = "vörösfülűÉkszerteknősToolStripMenuItem";
             this.vörösfülűÉkszerteknősToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
             this.vörösfülűÉkszerteknősToolStripMenuItem.Text = "Vörösfülű ékszerteknős";
+            // 
+            // gyíkokToolStripMenuItem
+            // 
+            this.gyíkokToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.gyíkokAlrendjeToolStripMenuItem,
+            this.kígyókAlrendjeToolStripMenuItem});
+            this.gyíkokToolStripMenuItem.Name = "gyíkokToolStripMenuItem";
+            this.gyíkokToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.gyíkokToolStripMenuItem.Text = "Pikkelyes hüllők rendje";
             // 
             // gyíkokAlrendjeToolStripMenuItem
             // 
@@ -133,7 +140,7 @@
             this.vakondgyíkfélékCsaládjaToolStripMenuItem,
             this.lábatlangyíkfélékCsaládjaToolStripMenuItem});
             this.gyíkokAlrendjeToolStripMenuItem.Name = "gyíkokAlrendjeToolStripMenuItem";
-            this.gyíkokAlrendjeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.gyíkokAlrendjeToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.gyíkokAlrendjeToolStripMenuItem.Text = "Gyíkok alrendje";
             // 
             // nyakörvösgyíkfélékCsaládjaToolStripMenuItem
@@ -151,31 +158,31 @@
             // zöldGyíkToolStripMenuItem
             // 
             this.zöldGyíkToolStripMenuItem.Name = "zöldGyíkToolStripMenuItem";
-            this.zöldGyíkToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.zöldGyíkToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.zöldGyíkToolStripMenuItem.Text = "Zöld gyík";
             // 
             // fürgeGyíkToolStripMenuItem
             // 
             this.fürgeGyíkToolStripMenuItem.Name = "fürgeGyíkToolStripMenuItem";
-            this.fürgeGyíkToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.fürgeGyíkToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.fürgeGyíkToolStripMenuItem.Text = "Fürge gyík";
             // 
             // elevenszülőGyíkToolStripMenuItem
             // 
             this.elevenszülőGyíkToolStripMenuItem.Name = "elevenszülőGyíkToolStripMenuItem";
-            this.elevenszülőGyíkToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.elevenszülőGyíkToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.elevenszülőGyíkToolStripMenuItem.Text = "Elevenszülő gyík";
             // 
             // faliGyíkToolStripMenuItem
             // 
             this.faliGyíkToolStripMenuItem.Name = "faliGyíkToolStripMenuItem";
-            this.faliGyíkToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.faliGyíkToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.faliGyíkToolStripMenuItem.Text = "Fali gyík";
             // 
             // homokiGyíkToolStripMenuItem
             // 
             this.homokiGyíkToolStripMenuItem.Name = "homokiGyíkToolStripMenuItem";
-            this.homokiGyíkToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.homokiGyíkToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.homokiGyíkToolStripMenuItem.Text = "Homoki gyík";
             // 
             // vakondgyíkfélékCsaládjaToolStripMenuItem
@@ -189,7 +196,7 @@
             // pannongyíkToolStripMenuItem
             // 
             this.pannongyíkToolStripMenuItem.Name = "pannongyíkToolStripMenuItem";
-            this.pannongyíkToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.pannongyíkToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.pannongyíkToolStripMenuItem.Text = "Pannongyík";
             // 
             // lábatlangyíkfélékCsaládjaToolStripMenuItem
@@ -219,7 +226,7 @@
             this.valódisiklófélékCsaládjaToolStripMenuItem,
             this.viperafélékCsaládjaToolStripMenuItem});
             this.kígyókAlrendjeToolStripMenuItem.Name = "kígyókAlrendjeToolStripMenuItem";
-            this.kígyókAlrendjeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.kígyókAlrendjeToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.kígyókAlrendjeToolStripMenuItem.Text = "Kígyók alrendje";
             // 
             // valódisiklófélékCsaládjaToolStripMenuItem
@@ -237,31 +244,31 @@
             // kaszpiHaragossiklóToolStripMenuItem
             // 
             this.kaszpiHaragossiklóToolStripMenuItem.Name = "kaszpiHaragossiklóToolStripMenuItem";
-            this.kaszpiHaragossiklóToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.kaszpiHaragossiklóToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.kaszpiHaragossiklóToolStripMenuItem.Text = "Kaszpi haragossikló";
             // 
             // erdeiSiklóToolStripMenuItem
             // 
             this.erdeiSiklóToolStripMenuItem.Name = "erdeiSiklóToolStripMenuItem";
-            this.erdeiSiklóToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.erdeiSiklóToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.erdeiSiklóToolStripMenuItem.Text = "Erdei sikló";
             // 
             // rézsiklóToolStripMenuItem
             // 
             this.rézsiklóToolStripMenuItem.Name = "rézsiklóToolStripMenuItem";
-            this.rézsiklóToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.rézsiklóToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.rézsiklóToolStripMenuItem.Text = "Rézsikló";
             // 
             // vízisiklóToolStripMenuItem
             // 
             this.vízisiklóToolStripMenuItem.Name = "vízisiklóToolStripMenuItem";
-            this.vízisiklóToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.vízisiklóToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.vízisiklóToolStripMenuItem.Text = "Vízisikló";
             // 
             // kockásSiklóToolStripMenuItem
             // 
             this.kockásSiklóToolStripMenuItem.Name = "kockásSiklóToolStripMenuItem";
-            this.kockásSiklóToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.kockásSiklóToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.kockásSiklóToolStripMenuItem.Text = "Kockás sikló";
             // 
             // viperafélékCsaládjaToolStripMenuItem
@@ -276,23 +283,23 @@
             // keresztesViperaToolStripMenuItem
             // 
             this.keresztesViperaToolStripMenuItem.Name = "keresztesViperaToolStripMenuItem";
-            this.keresztesViperaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.keresztesViperaToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.keresztesViperaToolStripMenuItem.Text = "Keresztes vipera";
             // 
             // rákosiViperaToolStripMenuItem
             // 
             this.rákosiViperaToolStripMenuItem.Name = "rákosiViperaToolStripMenuItem";
-            this.rákosiViperaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.rákosiViperaToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.rákosiViperaToolStripMenuItem.Text = "Rákosi vipera";
             // 
-            // textBox1
+            // txt_leiras
             // 
-            this.textBox1.Location = new System.Drawing.Point(21, 95);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(483, 203);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.Text = "Itt lesz a kiválaszott faj részletes leírása. A határozáshoz szükséges alapadatok" +
+            this.txt_leiras.Location = new System.Drawing.Point(21, 95);
+            this.txt_leiras.Multiline = true;
+            this.txt_leiras.Name = "txt_leiras";
+            this.txt_leiras.Size = new System.Drawing.Size(483, 203);
+            this.txt_leiras.TabIndex = 1;
+            this.txt_leiras.Text = "Itt lesz a kiválaszott faj részletes leírása. A határozáshoz szükséges alapadatok" +
     " adatbázisból lesznek lekérdezve.";
             // 
             // label1
@@ -348,6 +355,20 @@
             this.button3.Text = "Nagyít";
             this.button3.UseVisualStyleBackColor = true;
             // 
+            // hullohatDataSet1
+            // 
+            this.hullohatDataSet1.DataSetName = "hullohatDataSet1";
+            this.hullohatDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // fajokBindingSource
+            // 
+            this.fajokBindingSource.DataMember = "fajok";
+            this.fajokBindingSource.DataSource = this.hullohatDataSet1;
+            // 
+            // fajokTableAdapter
+            // 
+            this.fajokTableAdapter.ClearBeforeFill = true;
+            // 
             // FrmIsm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -359,15 +380,18 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txt_leiras);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FrmIsm";
             this.Text = "Hüllő Határozó V0.1 - Ismertető";
+            this.Load += new System.EventHandler(this.FrmIsm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hullohatDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fajokBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -404,12 +428,15 @@
         private System.Windows.Forms.ToolStripMenuItem viperafélékCsaládjaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem keresztesViperaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem rákosiViperaToolStripMenuItem;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_leiras;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private hullohatDataSet1 hullohatDataSet1;
+        private System.Windows.Forms.BindingSource fajokBindingSource;
+        private hullohatDataSet1TableAdapters.fajokTableAdapter fajokTableAdapter;
     }
 }
