@@ -42,6 +42,10 @@ namespace HulloHatarozo
         }
 
         SqlConnection con;
+        bool szinset = false;
+        bool mintaset = false;
+        string keresett_szin = "";
+        string keresett_minta = "";
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
@@ -82,6 +86,16 @@ namespace HulloHatarozo
             {
                 query += " AND tulajdonsagok.pupilla = 'függoleges'";
             }
+            if (szinset)
+            {
+                query += $" AND tulajdonsagok.szin = '{keresett_szin}'";
+            }
+            if (mintaset)
+            {
+                query += $" AND tulajdonsagok.minta = '{keresett_minta}'";
+            }
+            query += $" AND NOT ((tulajdonsagok.meret_min > {num_max.Value}) OR (tulajdonsagok.meret_max < {num_min.Value}))";
+            //query += $" AND tulajdonsagok.meret_max <= {num_max.Value}";
 
             SqlDataReader reader = new SqlCommand(query, con).ExecuteReader();
 
@@ -100,6 +114,25 @@ namespace HulloHatarozo
         }
 
         private void rdb_pupillk_CheckedChanged(object sender, EventArgs e)
+        {
+            updateList();
+        }
+
+        private void cmb_szin_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            szinset = true;
+            keresett_szin = cmb_szin.SelectedItem.ToString();
+            updateList();
+        }
+
+        private void cmb_minta_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            mintaset = true;
+            keresett_minta = cmb_minta.SelectedItem.ToString();
+            updateList();
+        }
+
+        private void num_min_ValueChanged(object sender, EventArgs e)
         {
             updateList();
         }

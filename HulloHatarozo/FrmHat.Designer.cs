@@ -36,7 +36,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmb_szin = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.rdb_pislogn = new System.Windows.Forms.RadioButton();
             this.rdb_pislogi = new System.Windows.Forms.RadioButton();
@@ -49,7 +49,7 @@
             this.fajokBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.fajokTableAdapter = new HulloHatarozo.hullohatDataSet1TableAdapters.fajokTableAdapter();
             this.listBox1 = new System.Windows.Forms.ListBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cmb_minta = new System.Windows.Forms.ComboBox();
             this.num_max = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.num_min)).BeginInit();
@@ -101,6 +101,7 @@
             0,
             0,
             0});
+            this.num_min.ValueChanged += new System.EventHandler(this.num_min_ValueChanged);
             // 
             // groupBox1
             // 
@@ -137,20 +138,21 @@
             this.radioButton1.UseVisualStyleBackColor = true;
             this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
-            // comboBox1
+            // cmb_szin
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cmb_szin.FormattingEnabled = true;
+            this.cmb_szin.Items.AddRange(new object[] {
             "Zöld",
             "Barna",
             "Szürke",
             "Bronz",
             "Ezüst",
             "Fekete"});
-            this.comboBox1.Location = new System.Drawing.Point(51, 26);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 6;
+            this.cmb_szin.Location = new System.Drawing.Point(51, 26);
+            this.cmb_szin.Name = "cmb_szin";
+            this.cmb_szin.Size = new System.Drawing.Size(121, 21);
+            this.cmb_szin.TabIndex = 6;
+            this.cmb_szin.SelectedIndexChanged += new System.EventHandler(this.cmb_szin_SelectedIndexChanged);
             // 
             // groupBox2
             // 
@@ -264,10 +266,10 @@
             this.listBox1.Size = new System.Drawing.Size(449, 355);
             this.listBox1.TabIndex = 11;
             // 
-            // comboBox2
+            // cmb_minta
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.cmb_minta.FormattingEnabled = true;
+            this.cmb_minta.Items.AddRange(new object[] {
             "Nincs",
             "Mintázott",
             "Csíkos",
@@ -277,10 +279,11 @@
             "Foltos",
             "Világos pettyek",
             "Világos csíkok"});
-            this.comboBox2.Location = new System.Drawing.Point(236, 26);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 12;
+            this.cmb_minta.Location = new System.Drawing.Point(236, 26);
+            this.cmb_minta.Name = "cmb_minta";
+            this.cmb_minta.Size = new System.Drawing.Size(121, 21);
+            this.cmb_minta.TabIndex = 12;
+            this.cmb_minta.SelectedIndexChanged += new System.EventHandler(this.cmb_minta_SelectedIndexChanged);
             // 
             // num_max
             // 
@@ -299,10 +302,11 @@
             this.num_max.Size = new System.Drawing.Size(120, 20);
             this.num_max.TabIndex = 13;
             this.num_max.Value = new decimal(new int[] {
-            20,
+            200,
             0,
             0,
             0});
+            this.num_max.ValueChanged += new System.EventHandler(this.num_min_ValueChanged);
             // 
             // label4
             // 
@@ -320,11 +324,11 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.num_max);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.cmb_minta);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cmb_szin);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.num_min);
             this.Controls.Add(this.label2);
@@ -357,7 +361,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmb_szin;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.RadioButton rdb_pislogn;
         private System.Windows.Forms.RadioButton rdb_pislogi;
@@ -370,7 +374,7 @@
         private System.Windows.Forms.BindingSource fajokBindingSource;
         private hullohatDataSet1TableAdapters.fajokTableAdapter fajokTableAdapter;
         private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cmb_minta;
         private System.Windows.Forms.NumericUpDown num_max;
         private System.Windows.Forms.Label label4;
     }
