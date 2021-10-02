@@ -20,24 +20,10 @@ namespace HulloHatarozo
         }
 
         private void FrmHat_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'hullohatDataSet1.fajok' table. You can move, or remove it, as needed.
-            // this.fajokTableAdapter.Fill(this.hullohatDataSet1.fajok);
+        {   
             con = new SqlConnection();
             con.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB; AttachDbFilename=|DataDirectory|\hullohat.mdf; Integrated Security=True";
             con.Open();
-
-
-            //SqlCommand command = new SqlCommand($"SELECT nev FROM fajok", con);
-            //SqlDataReader reader = command.ExecuteReader();
-
-            //while (reader.Read())
-            //{
-            //    listBox1.Items.Add(reader["nev"]);
-            //}
-
-            //reader.Close();
-
             updateList();
         }
 
@@ -47,10 +33,7 @@ namespace HulloHatarozo
         string keresett_szin = "";
         string keresett_minta = "";
 
-        private void radioButton2_CheckedChanged(object sender, EventArgs e)
-        {
-            updateList();
-        }
+        HashSet<string> fajlista = new HashSet<string>();
 
         private void updateList ()
         {
@@ -62,11 +45,11 @@ namespace HulloHatarozo
                 ON fajok.id = tulajdonsagok.fajid WHERE 1=1
             ";
 
-            if (radioButton2.Checked)
+            if (rdb_labv.Checked)
             {
                     query += " AND tulajdonsagok.lab > 0";
             }
-            if (radioButton1.Checked)
+            if (rdb_labn.Checked)
             {
                     query += " AND tulajdonsagok.lab < 1";
             }
@@ -95,27 +78,22 @@ namespace HulloHatarozo
                 query += $" AND tulajdonsagok.minta = '{keresett_minta}'";
             }
             query += $" AND NOT ((tulajdonsagok.meret_min > {num_max.Value}) OR (tulajdonsagok.meret_max < {num_min.Value}))";
-            //query += $" AND tulajdonsagok.meret_max <= {num_max.Value}";
 
             SqlDataReader reader = new SqlCommand(query, con).ExecuteReader();
 
             while (reader.Read())
             {
-                listBox1.Items.Add(reader["nev"]);
+                //listBox1.Items.Add(reader["nev"]);
+                fajlista.Add(reader["nev"].ToString());
             }
+            
 
             reader.Close();
-
-        }
-
-        private void rdb_pislogi_CheckedChanged(object sender, EventArgs e)
-        {
-            updateList();
-        }
-
-        private void rdb_pupillk_CheckedChanged(object sender, EventArgs e)
-        {
-            updateList();
+            foreach (var faj in fajlista)
+            {
+                listBox1.Items.Add(faj);
+            }
+            fajlista.Clear();
         }
 
         private void cmb_szin_SelectedIndexChanged(object sender, EventArgs e)
@@ -131,9 +109,39 @@ namespace HulloHatarozo
             keresett_minta = cmb_minta.SelectedItem.ToString();
             updateList();
         }
-
-        private void num_min_ValueChanged(object sender, EventArgs e)
+        private void minmax_joe(object sender, EventArgs e)
         {
+            if (num_min.Value<num_max.Value)
+            {
+                updateList();
+            }
+            else
+            {
+                MessageBox.Show("A megadott minimum érték kisebb kell legyen a maximumnál!","Hibás értékek!",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                num_min.Value = 10;
+                num_max.Value = 200;
+            }
+        }
+
+        private void talalat_szukites(object sender, EventArgs e)
+        {
+            updateList();
+        }
+
+        private void btn_clearall_Click(object sender, EventArgs e)
+        {
+            szinset = false;
+            mintaset = false;
+            cmb_szin.Text = "";
+            cmb_minta.Text = "";
+            num_min.Value = 10;
+            num_max.Value = 200;
+            rdb_labv.Checked = false;
+            rdb_labn.Checked = false;
+            rdb_pislogi.Checked = false;
+            rdb_pislogn.Checked = false;
+            rdb_pupillf.Checked = false;
+            rdb_pupillk.Checked = false;
             updateList();
         }
     }

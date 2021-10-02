@@ -34,8 +34,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.num_min = new System.Windows.Forms.NumericUpDown();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.rdb_labv = new System.Windows.Forms.RadioButton();
+            this.rdb_labn = new System.Windows.Forms.RadioButton();
             this.cmb_szin = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.rdb_pislogn = new System.Windows.Forms.RadioButton();
@@ -52,6 +52,9 @@
             this.cmb_minta = new System.Windows.Forms.ComboBox();
             this.num_max = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
+            this.btn_clearall = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.num_min)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -74,15 +77,15 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(16, 60);
+            this.label2.Location = new System.Drawing.Point(12, 60);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 13);
+            this.label2.Size = new System.Drawing.Size(97, 13);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Méret (cm)";
+            this.label2.Text = "Becsült méret (cm):";
             // 
             // num_min
             // 
-            this.num_min.Location = new System.Drawing.Point(79, 58);
+            this.num_min.Location = new System.Drawing.Point(110, 58);
             this.num_min.Maximum = new decimal(new int[] {
             200,
             0,
@@ -101,12 +104,12 @@
             0,
             0,
             0});
-            this.num_min.ValueChanged += new System.EventHandler(this.num_min_ValueChanged);
+            this.num_min.ValueChanged += new System.EventHandler(this.minmax_joe);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Controls.Add(this.radioButton1);
+            this.groupBox1.Controls.Add(this.rdb_labv);
+            this.groupBox1.Controls.Add(this.rdb_labn);
             this.groupBox1.Location = new System.Drawing.Point(30, 95);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(200, 100);
@@ -114,29 +117,29 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Van lába?";
             // 
-            // radioButton2
+            // rdb_labv
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(8, 43);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(44, 17);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Van";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            this.rdb_labv.AutoSize = true;
+            this.rdb_labv.Location = new System.Drawing.Point(8, 43);
+            this.rdb_labv.Name = "rdb_labv";
+            this.rdb_labv.Size = new System.Drawing.Size(44, 17);
+            this.rdb_labv.TabIndex = 1;
+            this.rdb_labv.TabStop = true;
+            this.rdb_labv.Text = "Van";
+            this.rdb_labv.UseVisualStyleBackColor = true;
+            this.rdb_labv.CheckedChanged += new System.EventHandler(this.talalat_szukites);
             // 
-            // radioButton1
+            // rdb_labn
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(99, 43);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(52, 17);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Nincs";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            this.rdb_labn.AutoSize = true;
+            this.rdb_labn.Location = new System.Drawing.Point(99, 43);
+            this.rdb_labn.Name = "rdb_labn";
+            this.rdb_labn.Size = new System.Drawing.Size(52, 17);
+            this.rdb_labn.TabIndex = 0;
+            this.rdb_labn.TabStop = true;
+            this.rdb_labn.Text = "Nincs";
+            this.rdb_labn.UseVisualStyleBackColor = true;
+            this.rdb_labn.CheckedChanged += new System.EventHandler(this.talalat_szukites);
             // 
             // cmb_szin
             // 
@@ -175,7 +178,7 @@
             this.rdb_pislogn.TabStop = true;
             this.rdb_pislogn.Text = "Nem";
             this.rdb_pislogn.UseVisualStyleBackColor = true;
-            this.rdb_pislogn.CheckedChanged += new System.EventHandler(this.rdb_pislogi_CheckedChanged);
+            this.rdb_pislogn.CheckedChanged += new System.EventHandler(this.talalat_szukites);
             // 
             // rdb_pislogi
             // 
@@ -187,12 +190,12 @@
             this.rdb_pislogi.TabStop = true;
             this.rdb_pislogi.Text = "Igen";
             this.rdb_pislogi.UseVisualStyleBackColor = true;
-            this.rdb_pislogi.CheckedChanged += new System.EventHandler(this.rdb_pislogi_CheckedChanged);
+            this.rdb_pislogi.CheckedChanged += new System.EventHandler(this.talalat_szukites);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(361, 58);
+            this.label3.Location = new System.Drawing.Point(430, 60);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(91, 13);
             this.label3.TabIndex = 9;
@@ -230,7 +233,7 @@
             this.rdb_pupillf.TabStop = true;
             this.rdb_pupillf.Text = "Függőleges";
             this.rdb_pupillf.UseVisualStyleBackColor = true;
-            this.rdb_pupillf.CheckedChanged += new System.EventHandler(this.rdb_pupillk_CheckedChanged);
+            this.rdb_pupillf.CheckedChanged += new System.EventHandler(this.talalat_szukites);
             // 
             // rdb_pupillk
             // 
@@ -242,7 +245,7 @@
             this.rdb_pupillk.TabStop = true;
             this.rdb_pupillk.Text = "Kerek";
             this.rdb_pupillk.UseVisualStyleBackColor = true;
-            this.rdb_pupillk.CheckedChanged += new System.EventHandler(this.rdb_pupillk_CheckedChanged);
+            this.rdb_pupillk.CheckedChanged += new System.EventHandler(this.talalat_szukites);
             // 
             // hullohatDataSet1
             // 
@@ -261,9 +264,9 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(350, 76);
+            this.listBox1.Location = new System.Drawing.Point(433, 76);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(449, 355);
+            this.listBox1.Size = new System.Drawing.Size(412, 355);
             this.listBox1.TabIndex = 11;
             // 
             // cmb_minta
@@ -287,7 +290,7 @@
             // 
             // num_max
             // 
-            this.num_max.Location = new System.Drawing.Point(206, 58);
+            this.num_max.Location = new System.Drawing.Point(258, 58);
             this.num_max.Maximum = new decimal(new int[] {
             200,
             0,
@@ -306,7 +309,7 @@
             0,
             0,
             0});
-            this.num_max.ValueChanged += new System.EventHandler(this.num_min_ValueChanged);
+            this.num_max.ValueChanged += new System.EventHandler(this.minmax_joe);
             // 
             // label4
             // 
@@ -317,11 +320,43 @@
             this.label4.TabIndex = 14;
             this.label4.Text = "Mintázat";
             // 
+            // btn_clearall
+            // 
+            this.btn_clearall.BackColor = System.Drawing.Color.LimeGreen;
+            this.btn_clearall.Location = new System.Drawing.Point(473, 12);
+            this.btn_clearall.Name = "btn_clearall";
+            this.btn_clearall.Size = new System.Drawing.Size(219, 35);
+            this.btn_clearall.TabIndex = 15;
+            this.btn_clearall.Text = "Minden alaphelyzetbe";
+            this.btn_clearall.UseVisualStyleBackColor = false;
+            this.btn_clearall.Click += new System.EventHandler(this.btn_clearall_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(233, 60);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(21, 13);
+            this.label5.TabIndex = 16;
+            this.label5.Text = "-től";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(384, 60);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(18, 13);
+            this.label6.TabIndex = 17;
+            this.label6.Text = "-ig";
+            // 
             // FrmHat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(857, 450);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.btn_clearall);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.num_max);
             this.Controls.Add(this.cmb_minta);
@@ -359,8 +394,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.NumericUpDown num_min;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton rdb_labv;
+        private System.Windows.Forms.RadioButton rdb_labn;
         private System.Windows.Forms.ComboBox cmb_szin;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.RadioButton rdb_pislogn;
@@ -377,5 +412,8 @@
         private System.Windows.Forms.ComboBox cmb_minta;
         private System.Windows.Forms.NumericUpDown num_max;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btn_clearall;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
     }
 }

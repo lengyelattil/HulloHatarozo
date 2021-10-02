@@ -70,6 +70,7 @@
             this.fajokBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.fajokTableAdapter = new HulloHatarozo.hullohatDataSet1TableAdapters.fajokTableAdapter();
             this.lbl_lat = new System.Windows.Forms.Label();
+            this.lbl_ertek = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hullohatDataSet1)).BeginInit();
@@ -396,11 +397,21 @@
             this.lbl_lat.TabIndex = 8;
             this.lbl_lat.Text = "Tudományos név: ";
             // 
+            // lbl_ertek
+            // 
+            this.lbl_ertek.AutoSize = true;
+            this.lbl_ertek.Location = new System.Drawing.Point(230, 34);
+            this.lbl_ertek.Name = "lbl_ertek";
+            this.lbl_ertek.Size = new System.Drawing.Size(125, 13);
+            this.lbl_ertek.TabIndex = 9;
+            this.lbl_ertek.Text = "Természetvédelmi érték: ";
+            // 
             // FrmIsm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(759, 320);
+            this.Controls.Add(this.lbl_ertek);
             this.Controls.Add(this.lbl_lat);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -467,5 +478,6 @@
         private System.Windows.Forms.BindingSource fajokBindingSource;
         private hullohatDataSet1TableAdapters.fajokTableAdapter fajokTableAdapter;
         private System.Windows.Forms.Label lbl_lat;
+        private System.Windows.Forms.Label lbl_ertek;
     }
 }

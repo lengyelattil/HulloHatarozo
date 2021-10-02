@@ -30,12 +30,16 @@ namespace HulloHatarozo
 
         private void updateText()
         {
+            lbl_mag.Text = "Magyar név: ";
+            txt_leiras.Text = "";
+            lbl_lat.Text = "Tudományos név: ";
+            lbl_ertek.Text = "Természetvédelmi érték: ";
 
             string query = @"
                 SELECT leiras
                 FROM fajok WHERE nev = 
             ";
-            query += faj;
+            query += "'" + faj + "'";
             lbl_mag.Text += faj;
 
             SqlDataReader reader = new SqlCommand(query, con).ExecuteReader();
@@ -49,118 +53,126 @@ namespace HulloHatarozo
             reader.Close();
 
             query = @"
-                SELECT latinnev
-                FROM fajok WHERE nev = 
+                SELECT fajok.latinnev, tulajdonsagok.eszmeiertek
+                FROM fajok LEFT JOIN tulajdonsagok
+                ON fajok.id = tulajdonsagok.fajid WHERE nev = 
             ";
-            query += faj;
+            query += "'"+faj+"'";
             reader = new SqlCommand(query, con).ExecuteReader();
             while (reader.Read())
             {
                 lbl_lat.Text += reader["latinnev"].ToString();
+                lbl_ertek.Text += reader["eszmeiertek"].ToString() + " Ft";
             }
             reader.Close();
+
+           /* query = @"
+                SELECT fajok.nev
+                FROM fajok LEFT JOIN tulajdonsagok
+                ON fajok.id = tulajdonsagok.fajid WHERE 1=1
+            ";*/
 
         }
 
         private void mocsáriTeknősToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            faj = "'Mocsári teknos'";
+            faj = "Mocsári teknos";
             updateText();
         }
 
         private void vörösfülűÉkszerteknősToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            faj = "'Vörösfülu ékszerteknos'";
+            faj = "Vörösfülu ékszerteknos";
             updateText();
         }
 
         private void zöldGyíkToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            faj = "'Zöld gyík'";
+            faj = "Zöld gyík";
             updateText();
         }
 
         private void fürgeGyíkToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            faj = "'Fürge gyík'";
+            faj = "Fürge gyík";
             updateText();
         }
 
         private void elevenszülőGyíkToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            faj = "'Elevenszülo gyík'";
+            faj = "Elevenszülo gyík";
             updateText();
         }
 
         private void faliGyíkToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            faj = "'Fali gyík'";
+            faj = "Fali gyík";
             updateText();
         }
 
         private void homokiGyíkToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            faj = "'Homoki gyík'";
+            faj = "Homoki gyík";
             updateText();
         }
 
         private void pannongyíkToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            faj = "'Pannongyík'";
+            faj = "Pannongyík";
             updateText();
         }
 
         private void közönségesLábatlangyíkToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            faj = "'Közönséges lábatlangyík'";
+            faj = "Közönséges lábatlangyík";
             updateText();
         }
 
         private void kékpettyesLábatlangyíkToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            faj = "'Kékpettyes lábatlangyík'";
+            faj = "Kékpettyes lábatlangyík";
             updateText();
         }
 
         private void kaszpiHaragossiklóToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            faj = "'Kaszpi haragossikló'";
+            faj = "Kaszpi haragossikló";
             updateText();
         }
 
         private void erdeiSiklóToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            faj = "'Erdei sikló'";
+            faj = "Erdei sikló";
             updateText();
         }
 
         private void rézsiklóToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            faj = "'Rézsikló'";
+            faj = "Rézsikló";
             updateText();
         }
 
         private void vízisiklóToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            faj = "'Vízisikló'";
+            faj = "Vízisikló";
             updateText();
         }
 
         private void kockásSiklóToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            faj = "'Kockás sikló'";
+            faj = "Kockás sikló";
             updateText();
         }
 
         private void keresztesViperaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            faj = "'Keresztes vipera'";
+            faj = "Keresztes vipera";
             updateText();
         }
 
         private void rákosiViperaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            faj = "'Rákosi vipera'";
+            faj = "Rákosi vipera";
             updateText();
         }
     }
