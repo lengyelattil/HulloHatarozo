@@ -61,18 +61,17 @@
             this.rákosiViperaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.txt_leiras = new System.Windows.Forms.TextBox();
             this.lbl_mag = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pctB_kep = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btn_elo = new System.Windows.Forms.Button();
+            this.btn_kov = new System.Windows.Forms.Button();
             this.hullohatDataSet1 = new HulloHatarozo.hullohatDataSet1();
             this.fajokBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.fajokTableAdapter = new HulloHatarozo.hullohatDataSet1TableAdapters.fajokTableAdapter();
             this.lbl_lat = new System.Windows.Forms.Label();
             this.lbl_ertek = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctB_kep)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hullohatDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fajokBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -83,7 +82,7 @@
             this.csoportokToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(759, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(890, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -330,49 +329,43 @@
             this.lbl_mag.TabIndex = 2;
             this.lbl_mag.Text = "Magyar név:";
             // 
-            // pictureBox1
+            // pctB_kep
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(510, 62);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(237, 203);
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
+            this.pctB_kep.Location = new System.Drawing.Point(510, 62);
+            this.pctB_kep.Name = "pctB_kep";
+            this.pctB_kep.Size = new System.Drawing.Size(368, 207);
+            this.pctB_kep.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pctB_kep.TabIndex = 3;
+            this.pctB_kep.TabStop = false;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(596, 34);
+            this.label2.Location = new System.Drawing.Point(668, 34);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(41, 13);
             this.label2.TabIndex = 4;
             this.label2.Text = "Képek:";
             // 
-            // button1
+            // btn_elo
             // 
-            this.button1.Location = new System.Drawing.Point(510, 275);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "<- Előző ";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_elo.Location = new System.Drawing.Point(510, 275);
+            this.btn_elo.Name = "btn_elo";
+            this.btn_elo.Size = new System.Drawing.Size(75, 23);
+            this.btn_elo.TabIndex = 5;
+            this.btn_elo.Text = "<- Előző ";
+            this.btn_elo.UseVisualStyleBackColor = true;
+            this.btn_elo.Click += new System.EventHandler(this.btn_elo_Click);
             // 
-            // button2
+            // btn_kov
             // 
-            this.button2.Location = new System.Drawing.Point(666, 275);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(81, 23);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Következő ->";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(599, 275);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(52, 23);
-            this.button3.TabIndex = 7;
-            this.button3.Text = "Nagyít";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btn_kov.Location = new System.Drawing.Point(797, 275);
+            this.btn_kov.Name = "btn_kov";
+            this.btn_kov.Size = new System.Drawing.Size(81, 23);
+            this.btn_kov.TabIndex = 6;
+            this.btn_kov.Text = "Következő ->";
+            this.btn_kov.UseVisualStyleBackColor = true;
+            this.btn_kov.Click += new System.EventHandler(this.btn_kov_Click);
             // 
             // hullohatDataSet1
             // 
@@ -410,25 +403,27 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(759, 320);
+            this.ClientSize = new System.Drawing.Size(890, 348);
             this.Controls.Add(this.lbl_ertek);
             this.Controls.Add(this.lbl_lat);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btn_kov);
+            this.Controls.Add(this.btn_elo);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pctB_kep);
             this.Controls.Add(this.lbl_mag);
             this.Controls.Add(this.txt_leiras);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
             this.Name = "FrmIsm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Hüllő Határozó V0.1 - Ismertető";
             this.Load += new System.EventHandler(this.FrmIsm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctB_kep)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hullohatDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fajokBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -469,11 +464,10 @@
         private System.Windows.Forms.ToolStripMenuItem rákosiViperaToolStripMenuItem;
         private System.Windows.Forms.TextBox txt_leiras;
         private System.Windows.Forms.Label lbl_mag;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pctB_kep;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btn_elo;
+        private System.Windows.Forms.Button btn_kov;
         private hullohatDataSet1 hullohatDataSet1;
         private System.Windows.Forms.BindingSource fajokBindingSource;
         private hullohatDataSet1TableAdapters.fajokTableAdapter fajokTableAdapter;

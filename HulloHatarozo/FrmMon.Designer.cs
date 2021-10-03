@@ -162,8 +162,11 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtb_hely);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "FrmMon";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Hüllő Határozó V0.1 - Észlelés";
             this.Load += new System.EventHandler(this.FrmMon_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_eszlel)).EndInit();

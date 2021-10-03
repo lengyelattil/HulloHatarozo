@@ -368,8 +368,11 @@
             this.Controls.Add(this.num_min);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "FrmHat";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Hüllő Határozó V0.1 - Határozó";
             this.Load += new System.EventHandler(this.FrmHat_Load);
             ((System.ComponentModel.ISupportInitialize)(this.num_min)).EndInit();

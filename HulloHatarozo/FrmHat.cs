@@ -83,7 +83,6 @@ namespace HulloHatarozo
 
             while (reader.Read())
             {
-                //listBox1.Items.Add(reader["nev"]);
                 fajlista.Add(reader["nev"].ToString());
             }
             

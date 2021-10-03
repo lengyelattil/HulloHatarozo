@@ -27,6 +27,8 @@ namespace HulloHatarozo
 
         SqlConnection con;
         string faj = "";
+        string[] eleresekt;
+        int i = 0;
 
         private void updateText()
         {
@@ -66,12 +68,23 @@ namespace HulloHatarozo
             }
             reader.Close();
 
-           /* query = @"
-                SELECT fajok.nev
-                FROM fajok LEFT JOIN tulajdonsagok
-                ON fajok.id = tulajdonsagok.fajid WHERE 1=1
-            ";*/
+            List<string> eleresekl = new List<string>();
 
+            query = @"
+                SELECT kepek.kep
+                FROM fajok LEFT JOIN kepek
+                ON fajok.id = kepek.fajid WHERE nev = 
+            ";
+            query += "'" + faj + "'";
+            reader = new SqlCommand(query, con).ExecuteReader();
+            while (reader.Read())
+            {
+               eleresekl.Add(reader["kep"].ToString());
+            }
+            reader.Close();
+            eleresekt = eleresekl.ToArray();
+
+            pctB_kep.Image = Image.FromFile($@"hullok\{eleresekt[i]}");
         }
 
         private void mocsáriTeknősToolStripMenuItem_Click(object sender, EventArgs e)
@@ -174,6 +187,26 @@ namespace HulloHatarozo
         {
             faj = "Rákosi vipera";
             updateText();
+        }
+       
+
+        private void btn_kov_Click(object sender, EventArgs e)
+        {
+            if (i<eleresekt.Length-1)
+            {
+                i++;
+                pctB_kep.Image = Image.FromFile($@"hullok\{eleresekt[i]}");
+            }
+            
+        }
+
+        private void btn_elo_Click(object sender, EventArgs e)
+        {
+            if (i > 0)
+            {
+                i--;
+                pctB_kep.Image = Image.FromFile($@"hullok\{eleresekt[i]}");
+            }
         }
     }
 }
