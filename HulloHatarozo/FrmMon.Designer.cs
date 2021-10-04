@@ -124,6 +124,7 @@
             this.dtgv_eszlel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgv_eszlel.Location = new System.Drawing.Point(253, 25);
             this.dtgv_eszlel.Name = "dtgv_eszlel";
+            this.dtgv_eszlel.ReadOnly = true;
             this.dtgv_eszlel.Size = new System.Drawing.Size(386, 228);
             this.dtgv_eszlel.TabIndex = 11;
             this.dtgv_eszlel.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgv_eszlel_CellClick);

@@ -94,6 +94,18 @@
     <Compile Include="FrmMon.Designer.cs">
       <DependentUpon>FrmMon.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmPont.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPont.Designer.cs">
+      <DependentUpon>FrmPont.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRogz.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRogz.Designer.cs">
+      <DependentUpon>FrmRogz.cs</DependentUpon>
+    </Compile>
     <Compile Include="hullohatDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -120,6 +132,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMon.resx">
       <DependentUpon>FrmMon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPont.resx">
+      <DependentUpon>FrmPont.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRogz.resx">
+      <DependentUpon>FrmRogz.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

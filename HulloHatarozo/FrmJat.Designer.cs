@@ -117,6 +117,7 @@
             this.eddigiEredményekToolStripMenuItem.Name = "eddigiEredményekToolStripMenuItem";
             this.eddigiEredményekToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.eddigiEredményekToolStripMenuItem.Text = "Eddigi eredmények";
+            this.eddigiEredményekToolStripMenuItem.Click += new System.EventHandler(this.eddigiEredményekToolStripMenuItem_Click);
             // 
             // súgóToolStripMenuItem
             // 

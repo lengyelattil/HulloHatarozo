@@ -41,7 +41,8 @@ namespace HulloHatarozo
                     "Szeretnéd menteni az eredményt?", "Játék vége!",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
                 if (dialogResult == DialogResult.Yes)
                 {
-
+                    FrmRogz frmr = new FrmRogz();
+                    frmr.ShowDialog();
                 }
             }
         }
@@ -52,7 +53,7 @@ namespace HulloHatarozo
         int[] rndkepekt;
         int i = 0;
         string query;
-        int pont = 0;
+        public static int pont = 0;
         string gnev = "";
         string glatin = "";
 
@@ -116,6 +117,12 @@ namespace HulloHatarozo
         private void hogyanKellJátszaniToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show("A játék indítása után a program 10 képet fog mutatni.\nMinden egyes képnél le kell írni helyesen a faj magyar és latin nevét.\nMinden helyesen megadott név egy pontot ér, így maximum 20 pont szerezhető.\nA játék végén lehetőség van elmenteni az eredményünket egy játékosnév megadásával.\nA mentett eredmények visszanézhetők, illetve törölhető az eredmények tábla tartalma.", "Játékszabályok", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void eddigiEredményekToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmPont pontt = new FrmPont();
+            pontt.ShowDialog();
         }
     }
 }

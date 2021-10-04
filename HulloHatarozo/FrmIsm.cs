@@ -32,6 +32,7 @@ namespace HulloHatarozo
 
         private void updateText()
         {
+            i = 0;
             lbl_mag.Text = "Magyar név: ";
             txt_leiras.Text = "";
             lbl_lat.Text = "Tudományos név: ";
@@ -50,8 +51,6 @@ namespace HulloHatarozo
             {
                 txt_leiras.Text = reader["leiras"].ToString();
             }
-            //txt_leiras.Text = reader.ToString();
-
             reader.Close();
 
             query = @"
@@ -61,10 +60,12 @@ namespace HulloHatarozo
             ";
             query += "'"+faj+"'";
             reader = new SqlCommand(query, con).ExecuteReader();
-            while (reader.Read())
+            bool j = true;
+            while (reader.Read() && j )
             {
                 lbl_lat.Text += reader["latinnev"].ToString();
                 lbl_ertek.Text += reader["eszmeiertek"].ToString() + " Ft";
+                j = false;
             }
             reader.Close();
 
