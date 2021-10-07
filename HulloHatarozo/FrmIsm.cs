@@ -34,7 +34,8 @@ namespace HulloHatarozo
         {
             i = 0;
             lbl_mag.Text = "Magyar név: ";
-            txt_leiras.Text = "";
+            //txt_leiras.Text = "";
+            rTB_leiras.Text = "";
             lbl_lat.Text = "Tudományos név: ";
             lbl_ertek.Text = "Természetvédelmi érték: ";
 
@@ -49,7 +50,8 @@ namespace HulloHatarozo
 
             while (reader.Read())
             {
-                txt_leiras.Text = reader["leiras"].ToString();
+                //txt_leiras.Text = reader["leiras"].ToString();
+                rTB_leiras.Text= reader["leiras"].ToString();
             }
             reader.Close();
 
@@ -61,7 +63,7 @@ namespace HulloHatarozo
             query += "'"+faj+"'";
             reader = new SqlCommand(query, con).ExecuteReader();
             bool j = true;
-            while (reader.Read() && j )
+            while (reader.Read() && j)
             {
                 lbl_lat.Text += reader["latinnev"].ToString();
                 lbl_ertek.Text += reader["eszmeiertek"].ToString() + " Ft";
@@ -86,17 +88,20 @@ namespace HulloHatarozo
             eleresekt = eleresekl.ToArray();
 
             pctB_kep.Image = Image.FromFile($@"hullok\{eleresekt[i]}");
+
+            btn_elo.Enabled = true;
+            btn_kov.Enabled = true;
         }
 
         private void mocsáriTeknősToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            faj = "Mocsári teknos";
+            faj = "Mocsári teknős";
             updateText();
         }
 
         private void vörösfülűÉkszerteknősToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            faj = "Vörösfülu ékszerteknos";
+            faj = "Vörösfülű ékszerteknős";
             updateText();
         }
 

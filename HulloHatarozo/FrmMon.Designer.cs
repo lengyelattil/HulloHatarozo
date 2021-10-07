@@ -134,17 +134,18 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(250, 9);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(89, 13);
+            this.label4.Size = new System.Drawing.Size(91, 13);
             this.label4.TabIndex = 12;
-            this.label4.Text = "Eddigi észelések:";
+            this.label4.Text = "Eddigi észlelések:";
             // 
             // btn_torol
             // 
+            this.btn_torol.Enabled = false;
             this.btn_torol.Location = new System.Drawing.Point(357, 259);
             this.btn_torol.Name = "btn_torol";
             this.btn_torol.Size = new System.Drawing.Size(175, 23);
             this.btn_torol.TabIndex = 13;
-            this.btn_torol.Text = "A kijelölt észelés törlése";
+            this.btn_torol.Text = "A kijelölt észlelés törlése";
             this.btn_torol.UseVisualStyleBackColor = true;
             this.btn_torol.Click += new System.EventHandler(this.btn_torol_Click);
             // 

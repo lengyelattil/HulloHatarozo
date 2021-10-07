@@ -57,7 +57,7 @@ namespace HulloHatarozo
             }
         }
 
-        string torlendoid;
+        string torlendoid="";
         private void btn_torol_Click(object sender, EventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("Bitosan törli a kijelölt elemet?", "Törlés megerősítése", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -72,6 +72,7 @@ namespace HulloHatarozo
                 DataTable dtbl = new DataTable();
                 adapter.Fill(dtbl);
                 dtgv_eszlel.DataSource = dtbl;
+                btn_torol.Enabled = false;
             }
            
         }
@@ -79,6 +80,7 @@ namespace HulloHatarozo
         private void dtgv_eszlel_CellClick(object sender, DataGridViewCellEventArgs e)
         {
            torlendoid = (dtgv_eszlel.Rows[e.RowIndex].Cells[0].Value.ToString());
+           btn_torol.Enabled = true;
         }
     }
 }

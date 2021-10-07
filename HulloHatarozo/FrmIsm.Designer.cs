@@ -59,7 +59,6 @@
             this.viperafélékCsaládjaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.keresztesViperaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rákosiViperaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.txt_leiras = new System.Windows.Forms.TextBox();
             this.lbl_mag = new System.Windows.Forms.Label();
             this.pctB_kep = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -70,6 +69,7 @@
             this.fajokTableAdapter = new HulloHatarozo.hullohatDataSet1TableAdapters.fajokTableAdapter();
             this.lbl_lat = new System.Windows.Forms.Label();
             this.lbl_ertek = new System.Windows.Forms.Label();
+            this.rTB_leiras = new System.Windows.Forms.RichTextBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctB_kep)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hullohatDataSet1)).BeginInit();
@@ -309,17 +309,6 @@
             this.rákosiViperaToolStripMenuItem.Text = "Rákosi vipera";
             this.rákosiViperaToolStripMenuItem.Click += new System.EventHandler(this.rákosiViperaToolStripMenuItem_Click);
             // 
-            // txt_leiras
-            // 
-            this.txt_leiras.Location = new System.Drawing.Point(21, 95);
-            this.txt_leiras.Multiline = true;
-            this.txt_leiras.Name = "txt_leiras";
-            this.txt_leiras.ReadOnly = true;
-            this.txt_leiras.Size = new System.Drawing.Size(483, 203);
-            this.txt_leiras.TabIndex = 1;
-            this.txt_leiras.Text = "Itt lesz a kiválaszott faj részletes leírása. A határozáshoz szükséges alapadatok" +
-    " adatbázisból lesznek lekérdezve.";
-            // 
             // lbl_mag
             // 
             this.lbl_mag.AutoSize = true;
@@ -349,6 +338,7 @@
             // 
             // btn_elo
             // 
+            this.btn_elo.Enabled = false;
             this.btn_elo.Location = new System.Drawing.Point(510, 275);
             this.btn_elo.Name = "btn_elo";
             this.btn_elo.Size = new System.Drawing.Size(75, 23);
@@ -359,6 +349,7 @@
             // 
             // btn_kov
             // 
+            this.btn_kov.Enabled = false;
             this.btn_kov.Location = new System.Drawing.Point(797, 275);
             this.btn_kov.Name = "btn_kov";
             this.btn_kov.Size = new System.Drawing.Size(81, 23);
@@ -399,11 +390,21 @@
             this.lbl_ertek.TabIndex = 9;
             this.lbl_ertek.Text = "Természetvédelmi érték: ";
             // 
+            // rTB_leiras
+            // 
+            this.rTB_leiras.Location = new System.Drawing.Point(21, 78);
+            this.rTB_leiras.Name = "rTB_leiras";
+            this.rTB_leiras.ReadOnly = true;
+            this.rTB_leiras.Size = new System.Drawing.Size(466, 246);
+            this.rTB_leiras.TabIndex = 10;
+            this.rTB_leiras.Text = "A fenti \"Csoportok\" menüből választhatod ki a keresett fajt.";
+            // 
             // FrmIsm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(890, 348);
+            this.Controls.Add(this.rTB_leiras);
             this.Controls.Add(this.lbl_ertek);
             this.Controls.Add(this.lbl_lat);
             this.Controls.Add(this.btn_kov);
@@ -411,7 +412,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pctB_kep);
             this.Controls.Add(this.lbl_mag);
-            this.Controls.Add(this.txt_leiras);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -462,7 +462,6 @@
         private System.Windows.Forms.ToolStripMenuItem viperafélékCsaládjaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem keresztesViperaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem rákosiViperaToolStripMenuItem;
-        private System.Windows.Forms.TextBox txt_leiras;
         private System.Windows.Forms.Label lbl_mag;
         private System.Windows.Forms.PictureBox pctB_kep;
         private System.Windows.Forms.Label label2;
@@ -473,5 +472,6 @@
         private hullohatDataSet1TableAdapters.fajokTableAdapter fajokTableAdapter;
         private System.Windows.Forms.Label lbl_lat;
         private System.Windows.Forms.Label lbl_ertek;
+        private System.Windows.Forms.RichTextBox rTB_leiras;
     }
 }

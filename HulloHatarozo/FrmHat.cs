@@ -67,7 +67,7 @@ namespace HulloHatarozo
             }
             if (rdb_pupillf.Checked)
             {
-                query += " AND tulajdonsagok.pupilla = 'függoleges'";
+                query += " AND tulajdonsagok.pupilla = 'függőleges'";
             }
             if (szinset)
             {
