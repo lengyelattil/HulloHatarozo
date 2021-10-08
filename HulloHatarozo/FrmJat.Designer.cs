@@ -44,7 +44,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btn_kov = new System.Windows.Forms.Button();
             this.btn_indit = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbl_pont = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pctB_kep)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -83,7 +83,7 @@
             this.txtb_magy.Location = new System.Drawing.Point(78, 19);
             this.txtb_magy.Name = "txtb_magy";
             this.txtb_magy.Size = new System.Drawing.Size(158, 20);
-            this.txtb_magy.TabIndex = 3;
+            this.txtb_magy.TabIndex = 1;
             // 
             // menuStrip1
             // 
@@ -152,7 +152,7 @@
             this.txtb_lat.Location = new System.Drawing.Point(335, 19);
             this.txtb_lat.Name = "txtb_lat";
             this.txtb_lat.Size = new System.Drawing.Size(158, 20);
-            this.txtb_lat.TabIndex = 5;
+            this.txtb_lat.TabIndex = 2;
             // 
             // label3
             // 
@@ -168,7 +168,7 @@
             this.btn_kov.Location = new System.Drawing.Point(604, 376);
             this.btn_kov.Name = "btn_kov";
             this.btn_kov.Size = new System.Drawing.Size(75, 23);
-            this.btn_kov.TabIndex = 6;
+            this.btn_kov.TabIndex = 3;
             this.btn_kov.Text = "Következő";
             this.btn_kov.UseVisualStyleBackColor = true;
             this.btn_kov.Visible = false;
@@ -179,26 +179,25 @@
             this.btn_indit.Location = new System.Drawing.Point(282, 136);
             this.btn_indit.Name = "btn_indit";
             this.btn_indit.Size = new System.Drawing.Size(180, 88);
-            this.btn_indit.TabIndex = 7;
+            this.btn_indit.TabIndex = 0;
             this.btn_indit.Text = "Játék indítása";
             this.btn_indit.UseVisualStyleBackColor = true;
             this.btn_indit.Click += new System.EventHandler(this.btn_indit_Click);
             // 
-            // label1
+            // lbl_pont
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(305, 340);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "label1";
+            this.lbl_pont.AutoSize = true;
+            this.lbl_pont.Location = new System.Drawing.Point(305, 340);
+            this.lbl_pont.Name = "lbl_pont";
+            this.lbl_pont.Size = new System.Drawing.Size(0, 13);
+            this.lbl_pont.TabIndex = 8;
             // 
             // FrmJat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(778, 461);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbl_pont);
             this.Controls.Add(this.btn_indit);
             this.Controls.Add(this.btn_kov);
             this.Controls.Add(this.groupBox1);
@@ -211,7 +210,7 @@
             this.MaximizeBox = false;
             this.Name = "FrmJat";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Hüllő Határozó V0.1 - Játék";
+            this.Text = "Hüllő Határozó V1.0 - Játék";
             this.Load += new System.EventHandler(this.FrmJat_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pctB_kep)).EndInit();
             this.menuStrip1.ResumeLayout(false);
@@ -240,6 +239,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btn_kov;
         private System.Windows.Forms.Button btn_indit;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbl_pont;
     }
 }

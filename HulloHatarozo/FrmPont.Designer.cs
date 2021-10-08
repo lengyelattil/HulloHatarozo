@@ -65,7 +65,7 @@
             this.MaximizeBox = false;
             this.Name = "FrmPont";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Hüllő Határozó V0.1 - Pont tábla";
+            this.Text = "Hüllő Határozó V1.0 - Ponttábla";
             this.Load += new System.EventHandler(this.FrmPont_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_pont)).EndInit();
             this.ResumeLayout(false);

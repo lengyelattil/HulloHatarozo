@@ -419,7 +419,7 @@
             this.MaximizeBox = false;
             this.Name = "FrmIsm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Hüllő Határozó V0.1 - Ismertető";
+            this.Text = "Hüllő Határozó V1.0 - Ismertető";
             this.Load += new System.EventHandler(this.FrmIsm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

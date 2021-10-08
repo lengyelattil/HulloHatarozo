@@ -72,13 +72,14 @@
             this.btn_rogzit.Location = new System.Drawing.Point(16, 185);
             this.btn_rogzit.Name = "btn_rogzit";
             this.btn_rogzit.Size = new System.Drawing.Size(75, 23);
-            this.btn_rogzit.TabIndex = 4;
+            this.btn_rogzit.TabIndex = 3;
             this.btn_rogzit.Text = "Rögzítés";
             this.btn_rogzit.UseVisualStyleBackColor = true;
             this.btn_rogzit.Click += new System.EventHandler(this.btn_rogzit_Click);
             // 
             // cmb_nev
             // 
+            this.cmb_nev.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_nev.FormattingEnabled = true;
             this.cmb_nev.Items.AddRange(new object[] {
             "Zöld gyík",
@@ -101,7 +102,7 @@
             this.cmb_nev.Location = new System.Drawing.Point(7, 36);
             this.cmb_nev.Name = "cmb_nev";
             this.cmb_nev.Size = new System.Drawing.Size(121, 21);
-            this.cmb_nev.TabIndex = 8;
+            this.cmb_nev.TabIndex = 0;
             // 
             // label3
             // 
@@ -117,7 +118,7 @@
             this.dTP_ido.Location = new System.Drawing.Point(7, 143);
             this.dTP_ido.Name = "dTP_ido";
             this.dTP_ido.Size = new System.Drawing.Size(200, 20);
-            this.dTP_ido.TabIndex = 10;
+            this.dTP_ido.TabIndex = 2;
             // 
             // dtgv_eszlel
             // 
@@ -126,7 +127,7 @@
             this.dtgv_eszlel.Name = "dtgv_eszlel";
             this.dtgv_eszlel.ReadOnly = true;
             this.dtgv_eszlel.Size = new System.Drawing.Size(386, 228);
-            this.dtgv_eszlel.TabIndex = 11;
+            this.dtgv_eszlel.TabIndex = 4;
             this.dtgv_eszlel.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgv_eszlel_CellClick);
             // 
             // label4
@@ -144,7 +145,7 @@
             this.btn_torol.Location = new System.Drawing.Point(357, 259);
             this.btn_torol.Name = "btn_torol";
             this.btn_torol.Size = new System.Drawing.Size(175, 23);
-            this.btn_torol.TabIndex = 13;
+            this.btn_torol.TabIndex = 5;
             this.btn_torol.Text = "A kijelölt észlelés törlése";
             this.btn_torol.UseVisualStyleBackColor = true;
             this.btn_torol.Click += new System.EventHandler(this.btn_torol_Click);
@@ -169,7 +170,7 @@
             this.MaximizeBox = false;
             this.Name = "FrmMon";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Hüllő Határozó V0.1 - Észlelés";
+            this.Text = "Hüllő Határozó V1.0 - Észlelés";
             this.Load += new System.EventHandler(this.FrmMon_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_eszlel)).EndInit();
             this.ResumeLayout(false);

@@ -98,7 +98,7 @@
             0});
             this.num_min.Name = "num_min";
             this.num_min.Size = new System.Drawing.Size(120, 20);
-            this.num_min.TabIndex = 4;
+            this.num_min.TabIndex = 3;
             this.num_min.Value = new decimal(new int[] {
             10,
             0,
@@ -123,7 +123,7 @@
             this.rdb_labv.Location = new System.Drawing.Point(8, 43);
             this.rdb_labv.Name = "rdb_labv";
             this.rdb_labv.Size = new System.Drawing.Size(44, 17);
-            this.rdb_labv.TabIndex = 1;
+            this.rdb_labv.TabIndex = 5;
             this.rdb_labv.TabStop = true;
             this.rdb_labv.Text = "Van";
             this.rdb_labv.UseVisualStyleBackColor = true;
@@ -135,7 +135,7 @@
             this.rdb_labn.Location = new System.Drawing.Point(99, 43);
             this.rdb_labn.Name = "rdb_labn";
             this.rdb_labn.Size = new System.Drawing.Size(52, 17);
-            this.rdb_labn.TabIndex = 0;
+            this.rdb_labn.TabIndex = 6;
             this.rdb_labn.TabStop = true;
             this.rdb_labn.Text = "Nincs";
             this.rdb_labn.UseVisualStyleBackColor = true;
@@ -143,6 +143,7 @@
             // 
             // cmb_szin
             // 
+            this.cmb_szin.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_szin.FormattingEnabled = true;
             this.cmb_szin.Items.AddRange(new object[] {
             "Zöld",
@@ -154,7 +155,7 @@
             this.cmb_szin.Location = new System.Drawing.Point(51, 26);
             this.cmb_szin.Name = "cmb_szin";
             this.cmb_szin.Size = new System.Drawing.Size(121, 21);
-            this.cmb_szin.TabIndex = 6;
+            this.cmb_szin.TabIndex = 1;
             this.cmb_szin.SelectedIndexChanged += new System.EventHandler(this.cmb_szin_SelectedIndexChanged);
             // 
             // groupBox2
@@ -174,7 +175,7 @@
             this.rdb_pislogn.Location = new System.Drawing.Point(88, 41);
             this.rdb_pislogn.Name = "rdb_pislogn";
             this.rdb_pislogn.Size = new System.Drawing.Size(47, 17);
-            this.rdb_pislogn.TabIndex = 1;
+            this.rdb_pislogn.TabIndex = 8;
             this.rdb_pislogn.TabStop = true;
             this.rdb_pislogn.Text = "Nem";
             this.rdb_pislogn.UseVisualStyleBackColor = true;
@@ -186,7 +187,7 @@
             this.rdb_pislogi.Location = new System.Drawing.Point(17, 41);
             this.rdb_pislogi.Name = "rdb_pislogi";
             this.rdb_pislogi.Size = new System.Drawing.Size(46, 17);
-            this.rdb_pislogi.TabIndex = 0;
+            this.rdb_pislogi.TabIndex = 7;
             this.rdb_pislogi.TabStop = true;
             this.rdb_pislogi.Text = "Igen";
             this.rdb_pislogi.UseVisualStyleBackColor = true;
@@ -229,7 +230,7 @@
             this.rdb_pupillf.Location = new System.Drawing.Point(88, 41);
             this.rdb_pupillf.Name = "rdb_pupillf";
             this.rdb_pupillf.Size = new System.Drawing.Size(80, 17);
-            this.rdb_pupillf.TabIndex = 1;
+            this.rdb_pupillf.TabIndex = 10;
             this.rdb_pupillf.TabStop = true;
             this.rdb_pupillf.Text = "Függőleges";
             this.rdb_pupillf.UseVisualStyleBackColor = true;
@@ -241,7 +242,7 @@
             this.rdb_pupillk.Location = new System.Drawing.Point(17, 41);
             this.rdb_pupillk.Name = "rdb_pupillk";
             this.rdb_pupillk.Size = new System.Drawing.Size(53, 17);
-            this.rdb_pupillk.TabIndex = 0;
+            this.rdb_pupillk.TabIndex = 9;
             this.rdb_pupillk.TabStop = true;
             this.rdb_pupillk.Text = "Kerek";
             this.rdb_pupillk.UseVisualStyleBackColor = true;
@@ -267,10 +268,11 @@
             this.listBox1.Location = new System.Drawing.Point(433, 76);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(412, 355);
-            this.listBox1.TabIndex = 11;
+            this.listBox1.TabIndex = 12;
             // 
             // cmb_minta
             // 
+            this.cmb_minta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_minta.FormattingEnabled = true;
             this.cmb_minta.Items.AddRange(new object[] {
             "Nincs",
@@ -285,7 +287,7 @@
             this.cmb_minta.Location = new System.Drawing.Point(236, 26);
             this.cmb_minta.Name = "cmb_minta";
             this.cmb_minta.Size = new System.Drawing.Size(121, 21);
-            this.cmb_minta.TabIndex = 12;
+            this.cmb_minta.TabIndex = 2;
             this.cmb_minta.SelectedIndexChanged += new System.EventHandler(this.cmb_minta_SelectedIndexChanged);
             // 
             // num_max
@@ -303,7 +305,7 @@
             0});
             this.num_max.Name = "num_max";
             this.num_max.Size = new System.Drawing.Size(120, 20);
-            this.num_max.TabIndex = 13;
+            this.num_max.TabIndex = 4;
             this.num_max.Value = new decimal(new int[] {
             200,
             0,
@@ -326,7 +328,7 @@
             this.btn_clearall.Location = new System.Drawing.Point(473, 12);
             this.btn_clearall.Name = "btn_clearall";
             this.btn_clearall.Size = new System.Drawing.Size(219, 35);
-            this.btn_clearall.TabIndex = 15;
+            this.btn_clearall.TabIndex = 11;
             this.btn_clearall.Text = "Minden alaphelyzetbe";
             this.btn_clearall.UseVisualStyleBackColor = false;
             this.btn_clearall.Click += new System.EventHandler(this.btn_clearall_Click);
@@ -373,7 +375,7 @@
             this.MaximizeBox = false;
             this.Name = "FrmHat";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Hüllő Határozó V0.1 - Határozó";
+            this.Text = "Hüllő Határozó V1.0 - Határozó";
             this.Load += new System.EventHandler(this.FrmHat_Load);
             ((System.ComponentModel.ISupportInitialize)(this.num_min)).EndInit();
             this.groupBox1.ResumeLayout(false);

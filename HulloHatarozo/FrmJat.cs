@@ -104,8 +104,7 @@ namespace HulloHatarozo
             reader.Close();
 
             pctB_kep.Image = Image.FromFile($@"hullok\{ikepeler}");
-            label1.Text = gnev;
-            label1.Text += $" {glatin}"+ $" {pont}";
+            lbl_pont.Text = $"Eddig elért pontszám: {pont}";
             lbl_szaml.Text = $"Milyen állat van a képen? {i + 1}/10";
         }
 

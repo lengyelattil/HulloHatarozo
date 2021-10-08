@@ -43,7 +43,7 @@ namespace HulloHatarozo
 
         private void btn_rogzit_Click(object sender, EventArgs e)
         {
-            if (txtb_hely.Text=="" || cmb_nev.SelectedItem.ToString()=="")
+            if (txtb_hely.Text=="" || cmb_nev.SelectedItem==null)
             {
                 MessageBox.Show("Nincs kitöltve minden adattag a rögzítéshez!","Hibás kitöltés!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
